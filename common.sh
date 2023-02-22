@@ -25,7 +25,6 @@ print_head "Install Nodejs"
 yum install nodejs -y &>>${log_file}
 status_check $?
 
-
 print_head "Add roboshop user"
 id roboshop &>>${log_file}
 if [ $? -ne 0 ]; then
@@ -60,7 +59,6 @@ print_head "Copying SystemD service File"
 cp ${code_dir}/configs/${component}.service /etc/systemd/system/${component}.service &>>${log_file}
 status_check $?
 
-
 print_head "Reload SystemD"
 systemctl daemon-reload &>>${log_file}
 status_check $?
@@ -73,7 +71,7 @@ print_head "Start ${component} Service"
 systemctl start ${component} &>>${log_file}
 status_check $?
 
-Print_head "Copy MongoDB Repo"
+print_head "Copy MongoDB Repo"
 cp ${code_dir}/configs/mongodb.repo /etc/yum.repos.d/mongo.repo &>>${log_file}
 status_check $?
 

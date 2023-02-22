@@ -1,4 +1,4 @@
 source common.sh
 
-component=user
+component=catalogue
 NODEJS
