@@ -10,7 +10,7 @@ status_check() {
   if [ $1 -eq 0 ]; then
     echo SUCCESS
   else
-    echo FAILURE
+    echo -e "\e[31mFAILURE\e[0m"
     echo "Read the log file ${log_file} for more information"
     exit 1
   fi
